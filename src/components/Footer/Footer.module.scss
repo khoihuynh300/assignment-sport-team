@@ -1,0 +1,49 @@
+.footer {
+  background-color: #1b1b1b;
+  color: #fff;
+  .footer-first {
+    padding: 40px 0 60px;
+    .logo-content {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .app-name {
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    }
+
+    ul {
+      li {
+        padding: 1rem 0;
+      }
+    }
+
+    a[href] {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .footer-second {
+    padding: 20px 0;
+    border-top: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .social-link {
+      display: flex;
+      gap: 20px;
+      font-size: 2.4rem;
+    }
+  }
+}

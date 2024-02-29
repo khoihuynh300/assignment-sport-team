@@ -1,0 +1,54 @@
+.header {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.33);
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 12px 0;
+    .logo-content {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .app-name {
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    }
+    .search-wrapper {
+      .search {
+        background-color: #fafafa;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        height: 40px;
+        width: 400px;
+        padding-left: 10px;
+
+        &:hover,
+        &:focus {
+          border: 1px solid #c5c6c9;
+        }
+      }
+    }
+    .user-panel {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 2.4rem;
+      .cart {
+      }
+      .notify {
+      }
+      .user {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
