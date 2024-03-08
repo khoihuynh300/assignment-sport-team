@@ -1,5 +1,12 @@
+@use '../../styles/breakpoint.scss';
+
 .header {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.33);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
 
   .wrapper {
     display: flex;
@@ -7,28 +14,71 @@
     align-items: center;
     height: 64px;
     padding: 12px 0;
-    .logo-content {
+    .left {
       display: flex;
       align-items: center;
-      gap: 6px;
-      .logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+      gap: 40px;
+
+      .logo-content {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        .return {
+          display: none;
+        }
+        .logo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        .app-name {
+          font-weight: 700;
+          font-size: 2rem;
+        }
       }
-      .app-name {
-        font-weight: 700;
-        font-size: 2rem;
+      .browser {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.8rem;
+        color: #555;
+
+        .angle-down {
+          font-size: 1.4rem;
+          transform: translateY(10%);
+        }
       }
     }
     .search-wrapper {
-      .search {
+      position: relative;
+
+      .clear {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 16px;
+        font-size: 3rem;
+        font-weight: 600;
+        color: #555;
+        cursor: pointer;
+        visibility: hidden;
+      }
+
+      input {
         background-color: #fafafa;
         border: 1px solid #fff;
         border-radius: 4px;
         height: 40px;
         width: 400px;
         padding-left: 10px;
+        font-size: 1.6rem;
+        color: #555;
+
+        &:not(:placeholder-shown) ~ .clear {
+          visibility: visible;
+        }
 
         &:hover,
         &:focus {
@@ -39,15 +89,78 @@
     .user-panel {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
       font-size: 2.4rem;
+      .become-instructor {
+        font-size: 2rem;
+        color: #555;
+      }
       .cart {
+        position: relative;
+        .badge {
+          position: absolute;
+          background-color: #ff4d4f;
+          height: 16px;
+          width: 16px;
+          top: -5px;
+          right: -5px;
+          border-radius: 50%;
+          font-size: 1.4rem;
+          text-align: center;
+          color: #fff;
+          border: 1px solid #fff;
+        }
       }
       .notify {
       }
       .user {
         width: 40px;
         height: 40px;
+      }
+      .close {
+        display: none;
+        font-size: 3rem;
+        font-weight: 600;
+        color: #555;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include breakpoint.mobile {
+    .wrapper {
+      .left {
+        .logo-content {
+          .return {
+            display: block;
+          }
+          .app-name {
+            display: none;
+          }
+        }
+        .browser {
+          display: none;
+        }
+      }
+      .search-wrapper {
+        display: none;
+      }
+      .user-panel {
+        .become-instructor {
+          display: none;
+        }
+        .cart {
+          display: none;
+        }
+        .notify {
+          display: none;
+        }
+        .user {
+          display: none;
+        }
+        .close {
+          display: block;
+        }
       }
     }
   }

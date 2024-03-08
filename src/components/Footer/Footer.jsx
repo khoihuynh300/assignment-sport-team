@@ -66,9 +66,15 @@ const Footer = () => {
         <Row className={footerStyles['footer-second']}>
           <div>Copyright © MyCourse.io 2024. All Rights Reserved</div>
           <div className={footerStyles['social-link']}>
-            <FontAwesomeIcon icon={faTwitter} />
-            <FontAwesomeIcon icon={faInstagram} />
-            <FontAwesomeIcon icon={faFacebookF} />
+            <a href="#">
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a href="#">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href="#">
+              <FontAwesomeIcon icon={faFacebookF} />
+            </a>
           </div>
         </Row>
       </Container>

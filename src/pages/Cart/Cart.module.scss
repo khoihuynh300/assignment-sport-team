@@ -1,0 +1,207 @@
+@use '../../styles/breakpoint.scss';
+
+.wrapper {
+  margin: 32px 0;
+
+  .left-container,
+  .right-container {
+    box-shadow: 0px 5px 20px -10px rgba(0, 0, 0, 0.33), 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    border-radius: 4px;
+  }
+
+  .left-container {
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      .check-all,
+      .delete-all {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+    }
+    .list-cart {
+      .item-cart {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 0;
+        border-top: 2px solid #f0f0f0;
+
+        .detail {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          flex: 1;
+
+          .price,
+          .quantity {
+            width: 16%;
+          }
+          .price {
+            padding-left: 6%;
+            font-weight: 600;
+          }
+          .quantity {
+            display: flex;
+            input {
+              font-size: 1.6rem;
+              height: 32px;
+              width: 46px;
+              text-align: center;
+              padding: 4px;
+              border: 1px solid transparent;
+              &:hover {
+                border-color: #dadada;
+              }
+              &:focus {
+                border-color: var(--primary-color);
+              }
+            }
+            .minus,
+            .plus {
+              font-size: 1.8rem;
+              background-color: #eff0f5;
+              color: #9e9e9e;
+              width: 32px;
+              height: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              border-radius: 2px;
+              transition: all 0.2s ease;
+
+              &:hover {
+                background-color: #dadada;
+                color: #fff;
+              }
+              &.disable {
+                background-color: #fafafa;
+                color: #dadada;
+              }
+            }
+          }
+          .variations {
+            color: rgba(0, 0, 0, 0.64);
+          }
+          .title {
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          @include breakpoint.mobile {
+            flex-direction: column;
+            align-items: start;
+            .title {
+              -webkit-line-clamp: 1;
+            }
+            .price,
+            .quantity {
+              width: 100%;
+            }
+            .price {
+              padding-left: 0;
+            }
+            .variations {
+              display: inline-flex;
+              div:first-child {
+                margin-right: 4px;
+              }
+            }
+          }
+        }
+
+        .image {
+          width: 80px;
+          border-radius: 3px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  .right-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 96px;
+
+    $padding: 16px;
+
+    @include breakpoint.mobile {
+      $padding: 12px;
+    }
+
+    .summary {
+      display: flex;
+      flex-direction: column;
+      .summary-section-heading {
+        font-size: 2.4rem;
+        padding: 12px 0;
+      }
+      .checkout-summary-rows {
+        padding: $padding 0;
+        display: flex;
+        flex-direction: column;
+        gap: $padding;
+        .checkout-summary-row {
+          display: flex;
+          justify-content: space-between;
+          color: #757575;
+
+          .price {
+            color: #000;
+            font-size: 1.8rem;
+          }
+        }
+      }
+      .checkout-total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+        font-weight: 600;
+        padding: $padding 0;
+        border-top: 2px solid #f0f0f0;
+
+        .price {
+          font-size: 2.2rem;
+        }
+      }
+    }
+
+    @include breakpoint.mobile {
+    }
+  }
+
+  @include breakpoint.mobile {
+    .left-container {
+      position: fixed;
+      background-color: #fff;
+      top: 64px;
+      right: 0;
+      left: 0;
+      bottom: 227px;
+      overflow: scroll;
+    }
+    .right-container {
+      position: fixed;
+      background-color: #fff;
+      height: fit-content;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      top: auto;
+      .summary {
+        .summary-section-heading {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

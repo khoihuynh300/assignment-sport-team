@@ -1,0 +1,14 @@
+.notify-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 30px 15px;
+  .icon {
+    color: var(--primary-color);
+    font-size: 80px;
+  }
+  .message {
+    color: #fff;
+  }
+}

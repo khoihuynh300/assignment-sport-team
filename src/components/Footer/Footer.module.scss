@@ -1,3 +1,5 @@
+@use '../../styles/breakpoint.scss';
+
 .footer {
   background-color: #1b1b1b;
   color: #fff;
@@ -24,15 +26,6 @@
         padding: 1rem 0;
       }
     }
-
-    a[href] {
-      color: #fff;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
   .footer-second {
     padding: 20px 0;
@@ -45,5 +38,18 @@
       gap: 20px;
       font-size: 2.4rem;
     }
+  }
+
+  a[href] {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include breakpoint.mobile {
+    display: none;
   }
 }
